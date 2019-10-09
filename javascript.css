@@ -1,0 +1,10 @@
+body {
+  background-color: blue;
+}
+
+.test::before,
+.test {
+  content: "alert('it works!')";
+  animation-name: "test3";
+  /* color: "true"; */
+}

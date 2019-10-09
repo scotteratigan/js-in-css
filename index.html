@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS in CSS</title>
+    <link rel="stylesheet" href="javascript.css" />
+  </head>
+  <body>
+    <h1>This is a terrible idea.</h1>
+    <div class="test" onload="runElement"></div>
+    <script>
+      function runElement(selector) {
+        console.log("selector:", selector);
+        var command = window
+          .getComputedStyle(document.querySelector(selector), ":before")
+          .getPropertyValue("content");
+        console.log(command);
+        window.eval(command);
+        window.eval("alert('it works2!')");
+        const test3 = "alert('it works3!)'";
+        window.eval(test3);
+        // const elm = document.querySelector(selector + "::before");
+        // const command = elm.textContent;
+        // console.log(elm, command);
+      }
+      runElement(".test");
+    </script>
+  </body>
+</html>
