@@ -1,10 +1,14 @@
 body {
-  background-color: blue;
+  background-color: rgb(241, 241, 252);
 }
 
-.test::before,
-.test {
-  content: "alert('it works!')";
-  animation-name: "test3";
-  /* color: "true"; */
+div {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+body::after {
+  display: none;
+  content: "console.log('console.logging from css');console.log('this is silly');document.querySelector('body').innerHTML += '<div>This div was inserted via JS-in-CSS</div>';setTimeout(() => alert('it works!'), 0);";
 }
