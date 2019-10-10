@@ -13,6 +13,13 @@
       ...but it is a proof of concept that with minimal JS (2 commands really) you can inject
       arbitrary javascript code that's sourced from a css file.
     </p>
+    <p>
+      Step 1 is to add the script to the content attribute of a pseudo element (after works well).
+    </p>
+    <p>
+      Step 2 is to load that content, strip out the first and last quote, and eval the
+      expression(s).
+    </p>
     <script>
       (() => {
         var c = window
